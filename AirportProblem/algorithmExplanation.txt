@@ -1,0 +1,26 @@
+Algorithm (Step by Step Explanation):
+---------------------------------------
+
+Approach:
+I use a Greedy Algorithm that always jumps to the farthest reachable airport first. Instead of checking all possible jumps, make the optimal decision at every step to minimize the total jumps.
+
+Steps to Solve the Problem:
+-----------------------------
+Step 1 : 
+  Initialize Variables
+  ->  maxReach - Tracks the farthest airport we can reach at any point.
+  ->  planesCount - Counts the number of planes used (jumps taken).
+  ->  end - Marks the end of the current range we can travel before taking another plane.
+  
+Step 2: 
+  Iterate Through the Array:
+  ->  For each airport i, update maxReach to the farthest index that can be reached.
+  ->  If we reach the end of the current jump (i === end), we increase the plane count (planesCount++) and update end = maxReach.
+
+Step 3:
+  Check for Early Termination:
+  ->  If end reaches or exceeds the last airport index (n - 1), return planesCount immediately.
+
+Step 4:
+  If We Can’t Move Further:
+  ->  If at any point maxReach is less than or equal to i (meaning we are stuck), return -1.
