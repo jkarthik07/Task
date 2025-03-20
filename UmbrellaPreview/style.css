@@ -1,0 +1,195 @@
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #d7efff;
+}
+
+/* Main Layout */
+.customizer-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  flex-direction: row;
+}
+
+/* For responsive */
+@media (max-width: 850px) {
+  .customizer-container {
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+
+/* Umbrella Preview */
+.umbrella-preview {
+  position: relative;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#umbrella {
+  width: 350px;
+  transition: transform 5s ease-in-out;
+}
+
+#logo-preview {
+  position: absolute;
+  width: 70px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo-hidden {
+  display: none;
+}
+
+/* Customizer Panel */
+.customizer-panel {
+  text-align: left;
+  max-width: 800px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: black;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Color Options */
+.color-options {
+  display: flex;
+  gap: 15px;
+  margin: 50px 0;
+}
+
+.color-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.color-btn.selected {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 5px solid rgba(251, 251, 251, 0.8);
+}
+
+/* Upload Logo Button */
+.upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7171f0;
+  position: relative;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.upload-btn .icon {
+  width: 20px;
+  position: absolute;
+  left: 20px;
+  height: 20px;
+  stroke-width: 4;
+  font-weight: bold;
+  filter: invert(1);
+  margin-right: 10px;
+}
+
+.upload-btn .icon-loader {
+  width: 23px;
+  position: absolute;
+  left: 20px;
+  display: none;
+  height: 23px;
+  filter: invert(1);
+  font-weight: bold;
+  margin-right: 10px;
+  animation: logo-spin infinite 3s ease-in-out;
+}
+
+.upload-btn input {
+  display: none;
+}
+
+#remove-file {
+  display: none;
+  background-color: #7171f0;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Umbrella Loader */
+.loader {
+  display: none;
+  animation: logo-spin infinite 3s ease-in-out;
+  width: 70px;
+  height: 70px;
+}
+
+@keyframes logo-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Disable interactions */
+.disabled-body {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.upload-btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.color-btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
